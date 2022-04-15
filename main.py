@@ -424,7 +424,7 @@ async def changelesson2(message: types.Message, state: FSMContext):
     db.updatelesson(name=data['name'], new_name=message.text)
     await state.finish()
     await message.answer('Готово', reply_markup=allkb)
-scheduler.add_job(sendeveryday, CronTrigger(year="*", month="*", day="*", hour="09", minute="00", second="1"))
+scheduler.add_job(sendeveryday, CronTrigger(year="*", month="*", day="*", hour="21", minute="30", second="1"))
 
 if __name__ == '__main__':
     scheduler.start()
